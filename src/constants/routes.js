@@ -1,0 +1,16 @@
+export const NAVIGATION = {
+  APP_NAVIGATOR: "AppNavi",
+  LOGIN: "Login",
+  WELCOME: "Welcome",
+  DRAWER: "MyDrawer",
+  REGISTER: "Register",
+  MATCH_DETAILS: "MatchDetails",
+  PROFILE: "ProfileScreen",
+  HOME: "Home",
+  PRODUCT_DETAILS: "ProductDetails",
+  ORDERS: "OrdersScreen",
+  BAG: "BagScreen",
+  BOTTOM_NAVIGATOR: "BottomNavigator",
+  CART: "CartScreen",
+  ADDRESS: "AddressScreen",
+};

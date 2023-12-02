@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import "react-native-gesture-handler";
+import { store } from "./src/store/configureStore";
+import { Provider } from "react-redux";
+import { PaperProvider } from "react-native-paper";
+import DrawerNavigator from "./src/navigation/DrawerNavigator";
+import { NavigationContainer } from "@react-navigation/native";
+import { useFonts } from "expo-font";
 
-export default function App() {
+const App = () => {
+  const [fontsLoaded] = useFonts({
+    "OpenSans-Medium": require("./assets/fonts/OpenSans-Medium.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+  // eas build -p android --profile preview
+  // eas update --branch preview --message "Updating the app"
+  // eas build --platform android
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Provider store={store}>
+        <PaperProvider>
+          <DrawerNavigator />
+        </PaperProvider>
+      </Provider>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
