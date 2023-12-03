@@ -1,24 +1,44 @@
-import { ScrollView, StyleSheet, View, Image } from "react-native";
-import React, { useEffect, useState } from "react";
-import { AppLoader, AppView, HomeHeader } from "../components";
+import { ScrollView, StyleSheet, View, Image, ImageBackground } from "react-native";
+import React from "react";
+import {  AppText, AppView, HomeHeader } from "../components";
 import ClockItem from "../components/ClockItem";
-import { getTournaments } from "../constants/functions";
-import { useDispatch, useSelector } from "react-redux";
 import { clockdata } from "../constants/data";
 import { FlatList } from "react-native";
+import { SIZES } from "../constants/theme";
 
 const HomeScreen = () => {
   return (
     <>
       <HomeHeader header={"Brandlu Watch"} />
       <AppView>
+        <ScrollView showsVerticalScrollIndicator={false}>
+        <ImageBackground resizeMode="contain" style={{
+          width:SIZES.width/1.5,
+          height:SIZES.height/2.5,
+          alignSelf:'center'
+
+        }} source={{uri:"https://firebasestorage.googleapis.com/v0/b/johar-football.appspot.com/o/WhatsApp%20Image%202023-10-27%20at%206.24.44%20PM%20(1).jpeg?alt=media&token=88987f85-2f0e-49a1-8a4f-a16199b98058"
+   }} />
+   <AppText bold={true}>New products</AppText>
         <FlatList
           data={clockdata}
-          showsVerticalScrollIndicator={false}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => <ClockItem item={item} />}
           keyExtractor={(item) => item.name}
-          numColumns={2}
+          // numColumns={2}
         />
+
+   <AppText bold={true}>New products</AppText>
+   <FlatList
+          data={clockdata}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => <ClockItem item={item} />}
+          keyExtractor={(item) => item.name}
+          // numColumns={2}
+        />
+        </ScrollView>
       </AppView>
     </>
   );
@@ -27,32 +47,6 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    width: "100%",
-    height: 100,
-  },
-  slide1: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#9DD6EB",
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#97CAE5",
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#92BBD9",
-  },
-  text: {
-    color: "#fff",
-    fontSize: 30,
-    fontWeight: "bold",
-  },
+
+
 });

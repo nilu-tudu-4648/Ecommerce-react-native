@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Image, ToastAndroid } from "react-native";
+import { View, Image, } from "react-native";
 import { COLORS, FSTYLES, SIZES } from "../constants/theme";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import AppText from "./AppText";
+import { NAVIGATION } from "../constants/routes";
 
 const HomeHeader = ({ iconColor, header, headerColor = "" }) => {
   const navigation = useNavigation();
@@ -15,7 +16,7 @@ const HomeHeader = ({ iconColor, header, headerColor = "" }) => {
         <Ionicons
           onPress={() => navigation.openDrawer()}
           name="reorder-three-sharp"
-          size={SIZES.largeTitle * 0.8}
+          size={SIZES.largeTitle * 0.7}
           color={iconColor || COLORS.black}
         />
         {header && (
@@ -35,7 +36,7 @@ const HomeHeader = ({ iconColor, header, headerColor = "" }) => {
         )}
         <TouchableOpacity
           onPress={() => {
-            ToastAndroid.show("Search", ToastAndroid.SHORT);
+            navigation.navigate(NAVIGATION.SEARCH)
           }}
         >
           <AntDesign
@@ -65,9 +66,9 @@ const styles = {
     width: "42%",
   },
   userImage: {
-    height: 45,
-    width: 45,
-    borderRadius: 45 / 2,
+    height: 42,
+    width: 42,
+    borderRadius: 42 / 2,
   },
 };
 

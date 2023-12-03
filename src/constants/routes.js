@@ -13,4 +13,5 @@ export const NAVIGATION = {
   BOTTOM_NAVIGATOR: "BottomNavigator",
   CART: "CartScreen",
   ADDRESS: "AddressScreen",
+  SEARCH: "SearchScreen",
 };

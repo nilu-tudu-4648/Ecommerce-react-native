@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   },
   screen: {
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
   },
   view: {
     flex: 1,

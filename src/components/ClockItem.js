@@ -19,26 +19,29 @@ const ClockItem = ({ item }) => {
         // },
         // shadowOpacity:  0.21,
         // shadowRadius: 6.65,
+        height: SIZES.height / 3.5,
         // backgroundColor: COLORS.white,
-        // elevation: 2
+        margin:SIZES.base1/4
     }}
       onPress={() => navigation.navigate(NAVIGATION.PRODUCT_DETAILS, {item,image:item.image})}
     >
       <View
         style={{
           borderColor: COLORS.black,
-          borderWidth: 0.2,
+          borderWidth: 0.6,
+          borderRadius:SIZES.base,
           width: SIZES.width / 2.3,
-          margin: SIZES.padding / 2,
-          height: SIZES.height / 3.5,
+          margin:  SIZES.base/2,
+          height: SIZES.height / 4.8,
         }}
       >
         <Image
           source={{uri: item.image}}
           style={{
-            width: "99%",
+            width: "80%",
             height: "100%",
             resizeMode: "contain",
+            alignSelf:'center'
           }}
         />
       </View>
@@ -48,14 +51,14 @@ const ClockItem = ({ item }) => {
         ₹{item.price}
       </AppText>
       </View>
-      <AppButton
+      {/* <AppButton
         title={item.stock ? "Buy Now" : "Out of Stock"}
         textStyle={{ color: item.stock ? COLORS.green : COLORS.red }}
         style={{
           width: "96%",
           backgroundColor: item.stock ? COLORS.lightgreen : COLORS.lightred,
         }}
-      />
+      /> */}
     </TouchableOpacity>
   );
 };

@@ -43,41 +43,19 @@ export const clockdata = [
       "Stay at the pinnacle of style and functionality with the T800 ultra black Smartwatch. This sleek and sophisticated timepiece is the perfect companion for the modern tech-savvy individual. It effortlessly merges fashion and technology, boasting a stunning design and an array of impressive features. Stay connected and informed with its crystal clear touchscreen display, allowing you to effortlessly access your notifications, messages, and calls with just a glance. Take charge of your fitness goals with its built-in health tracker, monitoring your steps, heart rate, and sleep patterns. Capture memories on the go with the integrated camera, ensuring you never miss a single moment. With its long-lasting battery life, the T800 ultra black Smartwatch keeps up with your active lifestyle, letting you conquer your day without worrying about recharging. Seamlessly compatible with both iOS and Android devices, this smartwatch takes your everyday routines to the next level. Elevate your style and stay in control with the T800 ultra black Smartwatch - the epitome of smart technology and fashion-forward design.",
     stock: true,
   },
-  {
-    id: 5,
-    name: "24K Gold Series 8 Ultra Gold",
-    price: 1999,
-    qty: 1,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/johar-football.appspot.com/o/WhatsApp%20Image%202023-10-27%20at%206.24.45%20PM.jpeg?alt=media&token=86f6e609-8618-442b-94f0-9d93e6d20da0",
-    description:
-      "TStay at the pinnacle of style and functionality with the T800 ultra black Smartwatch. This sleek and sophisticated timepiece is the perfect companion for the modern tech-savvy individual. It effortlessly merges fashion and technology, boasting a stunning design and an array of impressive features. Stay connected and informed with its crystal clear touchscreen display, allowing you to effortlessly access your notifications, messages, and calls with just a glance. Take charge of your fitness goals with its built-in health tracker, monitoring your steps, heart rate, and sleep patterns. Capture memories on the go with the integrated camera, ensuring you never miss a single moment. With its long-lasting battery life, the T800 ultra black Smartwatch keeps up with your active lifestyle, letting you conquer your day without worrying about recharging. Seamlessly compatible with both iOS and Android devices, this smartwatch takes your everyday routines to the next level. Elevate your style and stay in control with the T800 ultra black Smartwatch - the epitome of smart technology and fashion-forward design.",
-    stock: false,
-  },
-  {
-    id: 6,
-    name: "T800 ULTRA Smart Watch ( Grey )",
-    price: 1999,
-    qty: 1,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/johar-football.appspot.com/o/WhatsApp%20Image%202023-10-27%20at%206.24.44%20PM.jpeg?alt=media&token=86ce4e2a-99f1-41c9-8828-a287f99ddb2b",
-    description:
-      "TStay at the pinnacle of style and functionality with the T800 ultra black Smartwatch. This sleek and sophisticated timepiece is the perfect companion for the modern tech-savvy individual. It effortlessly merges fashion and technology, boasting a stunning design and an array of impressive features. Stay connected and informed with its crystal clear touchscreen display, allowing you to effortlessly access your notifications, messages, and calls with just a glance. Take charge of your fitness goals with its built-in health tracker, monitoring your steps, heart rate, and sleep patterns. Capture memories on the go with the integrated camera, ensuring you never miss a single moment. With its long-lasting battery life, the T800 ultra black Smartwatch keeps up with your active lifestyle, letting you conquer your day without worrying about recharging. Seamlessly compatible with both iOS and Android devices, this smartwatch takes your everyday routines to the next level. Elevate your style and stay in control with the T800 ultra black Smartwatch - the epitome of smart technology and fashion-forward design.",
-    stock: false,
-  },
-  {
-    id: 7,
-    name: "GEN 7 gold smart watch with round display",
-    price: 1999,
-    qty: 1,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/johar-football.appspot.com/o/WhatsApp%20Image%202023-10-27%20at%206.24.46%20PM.jpeg?alt=media&token=66aad076-c987-45ae-9a6d-eb162f055dfe",
-    description:
-      "TStay at the pinnacle of style and functionality with the T800 ultra black Smartwatch. This sleek and sophisticated timepiece is the perfect companion for the modern tech-savvy individual. It effortlessly merges fashion and technology, boasting a stunning design and an array of impressive features. Stay connected and informed with its crystal clear touchscreen display, allowing you to effortlessly access your notifications, messages, and calls with just a glance. Take charge of your fitness goals with its built-in health tracker, monitoring your steps, heart rate, and sleep patterns. Capture memories on the go with the integrated camera, ensuring you never miss a single moment. With its long-lasting battery life, the T800 ultra black Smartwatch keeps up with your active lifestyle, letting you conquer your day without worrying about recharging. Seamlessly compatible with both iOS and Android devices, this smartwatch takes your everyday routines to the next level. Elevate your style and stay in control with the T800 ultra black Smartwatch - the epitome of smart technology and fashion-forward design.",
-    stock: true,
-  },
 ];
 
+export const Catalogue = [
+  {title:"Footwear",subtitle:'Boots,shoes,sneakers',image:
+  "https://firebasestorage.googleapis.com/v0/b/johar-football.appspot.com/o/WhatsApp%20Image%202023-10-27%20at%206.24.45%20PM%20(1).jpeg?alt=media&token=083b593d-183c-4e95-83b2-16957f7de5f4",
+},
+  {title:"Pants",subtitle:'Jeans and trousers', image:
+  "https://firebasestorage.googleapis.com/v0/b/johar-football.appspot.com/o/WhatsApp%20Image%202023-10-27%20at%206.24.45%20PM%20(2).jpeg?alt=media&token=b2561dc1-58d4-48d8-8ffd-da2add4eef88",
+},
+  {title:"Outwear",subtitle:'Jackets and coats',image:
+  "https://firebasestorage.googleapis.com/v0/b/johar-football.appspot.com/o/WhatsApp%20Image%202023-10-27%20at%206.24.45%20PM%20(1).jpeg?alt=media&token=083b593d-183c-4e95-83b2-16957f7de5f4",
+},
+]
 export const FIRESTORE_COLLECTIONS = {
   CREATED_TEAMS: "createdTeams",
   USERS: "users",

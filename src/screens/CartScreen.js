@@ -8,7 +8,7 @@ import {
   AppButton,
   AppText,
 } from "../components";
-import { changeqtyofProduct } from "../store/userReducer";
+import { changeqtyofProduct, removeToCart } from "../store/userReducer";
 import AppHeader from "../components/AppHeader";
 const CartScreen = ({ navigation }) => {
   const {  cart } = useSelector((state) => state.entities.userReducer);
@@ -81,12 +81,12 @@ const CartScreen = ({ navigation }) => {
         </View>
         <View style={{ ...FSTYLES, padding: 0 }}>
         <AppButton
-            style={{ width: "48%" }}
-            onPress={() => dispatch(removeToCart(item.name))}
+            style={{ width: "48%" ,height:SIZES.h1*1.4}}
+            onPress={() => dispatch(removeToCart(item.id))}
             title="Remove"
           />
           <AppButton
-            style={{ width: "48%" }}
+            style={{ width: "48%"  ,height:SIZES.h1*1.4}}
             varient={true}
             onPress={() => ToastAndroid.show("Buy Now successfully",ToastAndroid.SHORT)}
             title="Buy Now"
@@ -101,32 +101,13 @@ const CartScreen = ({ navigation }) => {
       <View style={styles.container}>
         {cart.length ? (
           <>
+          <AppText bold={true} size={2.5}>{cart.length} items in cart</AppText>
             <FlatList
               data={cart}
               renderItem={renderItem}
               keyExtractor={(item, index) => index}
             />
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                borderTopColor: COLORS.lightgray1,
-                padding: SIZES.base,
-                borderTopWidth: 0.9,
-                justifyContent: "space-between",
-              }}
-            >
-              <View 
-                style={{ width: "30%" }}>
-                <AppText>Total</AppText>
-                <AppText size={1.5}>₹ {Math.round(reducecart)}</AppText>
-              </View>
-              <AppButton
-                style={{ width: "70%" }}
-                onPress={() => ToastAndroid.show("Order Placed successfully",ToastAndroid.SHORT)}
-                title="Place Order"
-                />
-            </View>
+            
           </>
         ) : (
           <View style={{ flex: 1, ...STYLES }}>
@@ -138,6 +119,28 @@ const CartScreen = ({ navigation }) => {
           </View>
         )}
       </View>
+     {
+      !cart.length? null :
+      <View
+      style={{
+       ...FSTYLES,
+        borderTopColor: COLORS.lightgray1,
+        padding: SIZES.base,
+        borderTopWidth: 0.9,
+      }}
+    >
+      <View 
+        style={{ width: "30%" }}>
+        <AppText bold={true}>Total</AppText>
+        <AppText size={1.5} bold={true}>₹ {Math.round(reducecart)}</AppText>
+      </View>
+      <AppButton
+        style={{ width: "60%" }}
+        onPress={() => ToastAndroid.show("Order Placed successfully",ToastAndroid.SHORT)}
+        title="Place Order"
+        />
+    </View>
+     }
     </>
   );
 };
@@ -145,25 +148,7 @@ const CartScreen = ({ navigation }) => {
 export default CartScreen;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: COLORS.white },
-  textWrapper: {
-    backgroundColor: "red",
-    ...STYLES,
-    height: "30%", // 70% of height device screen
-    width: "90%", // 80% of width device screen
-  },
-  textWrapper1: {
-    backgroundColor: "blue",
-    ...STYLES,
-    height: "30%", // 70% of height device screen
-    width: "95%", // 80% of width device screen
-  },
-  textWrapper2: {
-    backgroundColor: "pink",
-    ...STYLES,
-    height: "30%", // 70% of height device screen
-    width: "100%", // 80% of width device screen
-  },
+  container: { flex: 1, backgroundColor: COLORS.white,padding:SIZES.padding },
   myText: {
     fontSize: 25, // End result looks like the provided UI mockup
   },

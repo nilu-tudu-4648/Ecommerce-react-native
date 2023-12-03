@@ -18,6 +18,7 @@ import {
 } from "../screens";
 import OrdersScreen from "../screens/OrdersScreen";
 import AddressScreen from "../screens/AddressScreen";
+import SearchScreen from "../screens/SearchScreen";
 const Stack = createNativeStackNavigator();
 
 function AppNavigator() {
@@ -90,6 +91,11 @@ function AppNavigator() {
             options={options}
             name={NAVIGATION.BAG}
             component={BagScreen}
+          />
+          <Stack.Screen
+            options={options}
+            name={NAVIGATION.SEARCH}
+            component={SearchScreen}
           />
         </>
       )}
