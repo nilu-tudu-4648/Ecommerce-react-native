@@ -81,13 +81,12 @@ const CartScreen = ({ navigation }) => {
         </View>
         <View style={{ ...FSTYLES, padding: 0 }}>
         <AppButton
-            style={{ width: "48%" ,height:SIZES.h1*1.4}}
+            style={{ width: "48%" ,height:SIZES.h1*1.4,backgroundColor:COLORS.gray}}
             onPress={() => dispatch(removeToCart(item.id))}
             title="Remove"
           />
           <AppButton
             style={{ width: "48%"  ,height:SIZES.h1*1.4}}
-            varient={true}
             onPress={() => ToastAndroid.show("Buy Now successfully",ToastAndroid.SHORT)}
             title="Buy Now"
           />

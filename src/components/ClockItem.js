@@ -1,4 +1,4 @@
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Image, Pressable, StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, SIZES } from "../constants/theme";
 import { truncateString } from "../constants/functions";
@@ -10,7 +10,7 @@ import { NAVIGATION } from "../constants/routes";
 const ClockItem = ({ item }) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity
+    <Pressable
       style={{
         // shadowColor: "#000000",
         // shadowOffset: {
@@ -27,12 +27,12 @@ const ClockItem = ({ item }) => {
     >
       <View
         style={{
-          borderColor: COLORS.black,
-          borderWidth: 0.6,
           borderRadius:SIZES.base,
           width: SIZES.width / 2.3,
           margin:  SIZES.base/2,
           height: SIZES.height / 4.8,
+          elevation:4,
+          backgroundColor:COLORS.white
         }}
       >
         <Image
@@ -46,7 +46,7 @@ const ClockItem = ({ item }) => {
         />
       </View>
       <View style={{paddingHorizontal:SIZES.base1}}>
-      <AppText size={1.8}>{truncateString(item.name, 17)}</AppText>
+      <AppText size={1.8} bold={true}>{truncateString(item.name, 20)}</AppText>
       <AppText size={1.5} bold={true}>
         ₹{item.price}
       </AppText>
@@ -59,7 +59,7 @@ const ClockItem = ({ item }) => {
           backgroundColor: item.stock ? COLORS.lightgreen : COLORS.lightred,
         }}
       /> */}
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

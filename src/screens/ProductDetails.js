@@ -4,7 +4,6 @@ import {
   ScrollView,
   StyleSheet,
   View,
-  FlatList,
   TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";
@@ -69,12 +68,13 @@ const ProductDetails = ({ route, navigation }) => {
               style={{
                 width: SIZES.width,
                 height: SIZES.height * 0.4,
+                ...STYLES
               }}
             >
               <AntDesign
                 onPress={() => setwishlisted(!wishlisted)}
                 name={wishlisted ? "heart" : "hearto"}
-                style={{ alignSelf: "flex-end", right: SIZES.base * 4 }}
+                style={{ alignSelf: "flex-end" }}
                 size={24}
                 color={wishlisted ? COLORS.red : COLORS.gray}
               />
@@ -96,31 +96,16 @@ const ProductDetails = ({ route, navigation }) => {
                 ₹{itemDetails.price}
               </AppText>
               <View style={{ ...FSTYLES, width: "40%" }}>
-                <AntDesign
-                  name="star"
-                  size={SIZES.h3}
-                  color={COLORS.background}
-                />
-                <AntDesign
-                  name="star"
-                  size={SIZES.h3}
-                  color={COLORS.background}
-                />
-                <AntDesign
-                  name="star"
-                  size={SIZES.h3}
-                  color={COLORS.background}
-                />
-                <AntDesign
-                  name="star"
-                  size={SIZES.h3}
-                  color={COLORS.background}
-                />
-                <AntDesign
-                  name="star"
-                  size={SIZES.h3}
-                  color={COLORS.background}
-                />
+                {
+                  [1,1,1,1,1].map((ite,i)=>(
+                    <AntDesign
+                    key={i}
+                    name="star"
+                    size={SIZES.h3}
+                    color={COLORS.yellow}
+                  />
+                  ))
+                }
                 <AppText>{"(12)"}</AppText>
               </View>
             </View>
@@ -158,13 +143,11 @@ const ProductDetails = ({ route, navigation }) => {
                 />
               ) : (
                 <AppButton
-                  varient={true}
                   onPress={() => dispatch(addtoCart(itemDetails))}
-                  style={{ width: "46%" }}
+                  style={{ width: "46%",backgroundColor:COLORS.gray }}
                   title={"Add to Cart"}
                 />
               )}
-
               <AppButton
                 style={{ width: "46%", backgroundColor: COLORS.green }}
                 title={"Buy Now"}

@@ -29,7 +29,7 @@ const HomeScreen = () => {
           // numColumns={2}
         />
 
-   <AppText bold={true}>New products</AppText>
+   <AppText bold={true}>Recommended for you</AppText>
    <FlatList
           data={clockdata}
           horizontal={true}
